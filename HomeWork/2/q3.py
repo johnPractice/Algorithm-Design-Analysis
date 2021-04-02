@@ -1,3 +1,4 @@
+import math
 def input_user():
     n=int(input())
     return n
@@ -8,9 +9,9 @@ def change_coin(n,coins):
     m=0
     while n>=0 and i <len(coins):
         if n>=coins[i]:
-            m+=1
-            n=n-coins[i]
-        else:
+            m=m+math.floor(n/coins[i])
+            n=math.floor(n%coins[i])
+        else:   
             i+=1
     return m
 def main():
