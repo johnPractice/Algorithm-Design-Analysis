@@ -5,14 +5,12 @@ def input_user():
 
 
 def change_coin(n,coins):
-    i=0
     m=0
-    while n>=0 and i <len(coins):
-        if n>=coins[i]:
-            m=m+math.floor(n/coins[i])
-            n=math.floor(n%coins[i])
-        else:   
-            i+=1
+    m=m+(n//coins[0])
+    n=(n%coins[0])
+    m=m+(n//coins[1])
+    n=(n%coins[1])
+    m=m+int(n/coins[2])
     return m
 def main():
     # 10 5 1 coins are valid
