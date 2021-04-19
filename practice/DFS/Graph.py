@@ -25,6 +25,19 @@ class Graph:
             if v not in visited:
                 self._dfs_util(v,visited)
 
+    def bfs(self,s):
+        visited=[False] * (max(self.graph)+1)
+        queue=[]
+        queue.append(s)
+        visited[s]=True
+        while queue:
+            s=queue.pop(0)
+            print (s, end = " ")
+            for i in self.graph[s]:
+                if visited[i]==False:
+                    queue.append(i)
+                    visited[i]=True
+        
 
 
 
@@ -35,6 +48,7 @@ def main():
     g.add_edge(1,3)
     g.add_edge(3,1)
     g.add_edge(10,11)
-    g.dfs()
+    # g.dfs()
+    g.bfs(0)
 if __name__ == "__main__":
     main()
