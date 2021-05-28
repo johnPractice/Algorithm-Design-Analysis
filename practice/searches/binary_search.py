@@ -5,8 +5,7 @@ def binary_search(datas:list,find:int):
     start=0
     end=len(datas)
     mid=ceil((start+end)/2)
-    while start!=end:
-        print(mid)
+    while start<=end:
         check_data=datas[mid]
         if check_data==find:
             return {"result":mid,"list":datas}
